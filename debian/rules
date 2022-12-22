@@ -1,0 +1,45 @@
+#!/usr/bin/make -f
+
+include /usr/share/dpkg/architecture.mk
+ifeq ($(origin CC),default)
+CC := $(DEB_HOST_GNU_TYPE)-gcc
+endif
+
+CFLAGS := -Wall -g -O$(if $(findstring noopt,$(DEB_BUILD_OPTIONS)),0,2)
+
+build: build-arch build-indep
+build-arch: dvidvi
+build-indep: dvidvi
+
+clean:
+	dh_testdir
+	dh_testroot
+	dh_clean dvidvi
+
+install: build
+	dh_testdir
+	dh_testroot
+	dh_prep
+	dh_installdirs
+	dh_install dvidvi debian/a5booklet usr/bin
+
+binary-indep: build install
+
+binary-arch: build install
+	dh_testdir
+	dh_testroot
+	dh_installchangelogs
+	dh_installdocs
+	dh_installexamples a5test.tex a5bookle.hlp
+	dh_installman dvidvi.1 debian/a5booklet.1
+	dh_strip
+	dh_compress
+	dh_fixperms
+	dh_installdeb
+	dh_shlibdeps
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+binary: binary-indep binary-arch
+.PHONY: build build-arch build-indep clean binary binary-arch binary-indep install

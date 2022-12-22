@@ -1,0 +1,35 @@
+dvidvi:
+
+  From the executable:
+
+  This is dvidvi 1.0, Copyright (C) 1988-91, Radical Eye Software
+
+
+The author Tomas G. Rokicki stated the program is copyrighted unter
+the terms of the GPL:
+
+
+  Date: Mon, 26 Jun 2000 15:25:21 -0700 (PDT)
+  From: Tomas G. Rokicki <rokicki@CS.Stanford.EDU>
+  To: bunk@fs.tum.de, ezimanyi@rc1.vub.ac.be, rokicki@radicaleye.com
+  Subject: Re: Copyright for dvidvi
+
+  I give full license for that code to be used under the GPL.
+
+  -tom
+
+The package also includes patches by Benjamin Bayart.
+
+a5booklet (the little shell script):
+
+  (c) 1997 David A. van Leeuwen
+
+
+From the manual page:
+
+  A5booklet is available under the conditions of the Gnu Public Licence.
+
+
+
+On Debian GNU/Linux systems, the complete text of the GNU General
+Public License can be found in `/usr/share/common-licenses/GPL'.

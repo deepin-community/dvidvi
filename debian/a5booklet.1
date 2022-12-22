@@ -1,0 +1,64 @@
+.TH A5BOOKLET 1 "OCTOBER 1997"
+.SH NAME
+a5booklet \- copy two A5 pages from a .dvi file to one A4 page in another.
+.SH SYNOPSIS
+.B a5booklet
+.IB file [.dvi]
+
+.SH DESCRIPTION
+.IX a5booklet
+.LP
+.B A5booklet
+is a little script that allows you to typeset two A5 pages next to
+eachother on a single A4 page (landscape), combining pages from
+the original file in such a way that after double sided printing and
+some reshuffeling of the pages you get a nice a5 booklet that is ready
+for a staple in the middle. 
+
+The script calls a very clever program 
+.BR dvidvi ,
+written by Tomas Rokicki (the author of 
+.BR dvips ),
+that does the real work. 
+
+The output is written to two files, 
+.IB file -1.dvi
+and
+.IB file -2.dvi
+. Print the first file, using the command
+.LP
+.B dvips -ta4 -tlandscape 
+.IB file -1
+.LP
+then put the stack upside doen in the printer, and print the second
+file using
+.LP
+.B dvips -ta4 -tlandscape 
+.IB file -2
+.LP
+Make sure that the bottom of the A5-pages is on the correct side of
+the paper when you put the stack back for printing the back side.
+After the two print jobs, you must re-shuffle the paper stack before
+you can staple it. 
+
+.SH SEE ALSO
+.BR tex (1),
+.BR dvips (1),
+.BR dvidvi (1).
+.LP
+.SH BUGS
+.LP
+The script has A4 papersize hardwired into it.  Admittedly, a
+European-centered way of thinking.  
+
+Page number 1 is always the first page in the original .dvi file, not
+the page numbered 1 by TeX's numbering scheme. 
+
+.SH AUTHOR
+.B A5booklet
+is written by David A. van Leeuwen (david@ElseWare.cistron.nl), but is
+is not original in any way.  The main two lines that do the work are
+inspired from the man page of 
+.BR dvidvi .
+.B A5booklet
+is available under the conditions of the Gnu Public Licence.

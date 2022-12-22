@@ -1,0 +1,141 @@
+dvidvi (1.0-8-deepin1) unstable; urgency=medium
+
+  * Rebuild
+
+ -- Deepin Packages Builder <packages@deepin.org>  Mon, 14 Nov 2022 17:35:39 +0800
+
+dvidvi (1.0-8.2) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Fix the NMU version.
+  * Fix FTCBFS: Use triplet-prefixed compiler. Thanks to
+    Helmut Grohne <helmut@subdivi.de>. (Closes: #843346)
+
+ -- Joao Eriberto Mota Filho <eriberto@debian.org>  Thu, 22 Dec 2016 18:12:22 -0200
+
+dvidvi (1.0-8etch2.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+
+  [ Logan Rosen ]
+
+  * debian/control: depend on ${misc:Depends}.
+  * debian/rules:
+      - Add recommended build-arch and build-indep targets.
+      - Use dh_prep instead of dh_clean -k.
+
+  [ Joao Eriberto Mota Filho ]
+
+  * Bumped DH level to 10. (Closes: #817441)
+  * debian/control:
+      - Added the Homepage field.
+      - Bumped Standards-Version to 3.9.8.
+
+ -- Joao Eriberto Mota Filho <eriberto@debian.org>  Wed, 26 Oct 2016 15:00:57 -0200
+
+dvidvi (1.0-8etch2) unstable; urgency=low
+
+  * Replace versions of texlive that contained dvidvi
+    (closes: #412006)
+
+ -- Lionel Elie Mamane <lmamane@debian.org>  Fri, 23 Feb 2007 22:13:37 +0100
+
+dvidvi (1.0-8etch1) unstable; urgency=low
+
+  * Tweak description some more (thanks to Marc 'HE' Brockschmidt for the kick)
+
+ -- Lionel Elie Mamane <lmamane@debian.org>  Wed, 21 Feb 2007 11:54:39 +0100
+
+dvidvi (1.0-8) unstable; urgency=low
+
+  * Do not depend on tetex-bin
+  * Bump up Standards-Version to 3.7.2.2
+  * Tweak description a bit
+
+ -- Lionel Elie Mamane <lmamane@debian.org>  Tue, 20 Feb 2007 17:21:39 +0100
+
+dvidvi (1.0-7) unstable; urgency=low
+
+  * New maintainer (closes: #274276)
+  * Integrate patch by Benjamin Bayart to take into account PostScript
+    inclusion \special's in the first page even if the first page is not
+    kept in the final result. Fixes handling of dvi files making use of
+    PStricks or colour or other advanced PostScript features.
+  * Bump up Standards-Version to 3.6.2
+  * Make the C code warning-free.
+
+ -- Lionel Elie Mamane <lmamane@debian.org>  Tue, 27 Sep 2005 08:44:40 +0200
+
+dvidvi (1.0-6) unstable; urgency=low
+
+  * QA upload.
+  * dvidvi.c (stringdvibuf): Fix "unexpected eof" error; thanks to
+    Benjamin BAYART for the patch.  Closes: #231275.
+  * Switch to debhelper 4.
+  * debian/rules: Add support for DEB_BUILD_OPTIONS=noopt.
+  * Conforms to Standards version 3.6.1.
+
+ -- Matej Vela <vela@debian.org>  Mon,  2 May 2005 01:00:51 +0200
+
+dvidvi (1.0-5) unstable; urgency=low
+
+  * QA Group upload orphaning this package
+  * Incorporates old NMUs (closes: #91439, #120958, #168387)
+  * dvidvi.1: change .TH macro to 1 instead of L
+  * Removed postinst and prerm because they didn't do anything
+
+ -- Andrew Pollock <apollock@debian.org>  Tue,  9 Nov 2004 21:52:24 +1100
+
+dvidvi (1.0-4.1) unstable; urgency=low
+
+  * Non-maintainer upload with approval from maintainer
+  * Reformat debian/control description to avoid initial '.' which may
+    cause parsing problems (Closes: #120958)
+  * debian/control: short description doesn't need trailing '.'
+  * Added Build-Depends (Closes: #168387)
+  * debian/rules: comment out dh_testversion (deprecated)
+  * debian/postinst: no longer need to set /usr/doc -> /usr/share/doc link.
+
+ -- Hwei Sheng Teoh <hsteoh@debian.org>  Tue, 26 Nov 2002 15:28:31 -0500
+
+dvidvi (1.0-4) unstable testing; urgency=low
+
+  * moved to debhelper rules file.
+  
+  * removed /usr/doc and /usr/man installs (closes: Bug#91146, coses:
+    Bug#91439)
+  
+
+ -- David A. van Leeuwen <david@elseware.cistron.nl>  Tue,  3 Apr 2001 13:44:14 +0200
+
+dvidvi (1.0-3.1) unstable frozen; urgency=low
+
+  * NMU with permission of David A. van Leeuwen.
+  * Dependency on libc6 is now calculated using "${shlibs:Depends}".
+    (closes: #65051)
+  * Added notice that dvidvi is under the GPL in the copyright file.
+    (closes: #65052)
+  * Upload sponsored by Tony Mancill <tmancill@debian.org>.
+
+ -- Adrian Bunk <bunk@fs.tum.de>  Mon,  3 Jul 2000 12:46:29 +0200
+
+dvidvi (1.0-3) unstable; urgency=low
+
+  * libc6 compile.
+
+ -- David A. van Leeuwen <david@ElseWare.cistron.nl>  Wed, 19 Nov 1997 23:35:54 +0100
+
+dvidvi (1.0-2) unstable; urgency=low
+
+  * Put original distribution in dvidvi_1.0.orig.tar.gz.  Changed rules 
+    to remove the executable as well. 
+
+ -- David A. van Leeuwen <david@ElseWare.cistron.nl>  Sun, 9 Nov 1997 12:21:57 +0100
+
+dvidvi (1.0-1) unstable; urgency=low
+
+  * First compile.  Added script `a5booklet' that allows you to print two
+    a5 pages on one a5 page side by side. 
+
+ -- David A. van Leeuwen <david@ElseWare.cistron.nl>  Mon, 13 Oct 1997 23:05:41 +0200
+
